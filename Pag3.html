@@ -1,0 +1,94 @@
+<DOCTYPE HTML>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8"/>
+        <title>store</title>
+        <link rel="stylesheet" type="text/css" href="estilo(pag3).css"/>
+    </head> 
+    
+    <body> <!---parte visual do site</!--->
+        <!---corpo do site</!--->
+         
+             <div id="interface"> </div>
+                 
+    <script>
+       // Função para salvar o nome e endereço no localStorage
+        function saveProfile() {
+            const nome = document.getElementById('nome').value;
+            const endereco = document.getElementById('endereco').value;
+            
+            // Salvando os dados no localStorage
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('endereco', endereco);
+            
+            alert('Perfil salvo com sucesso!');
+        }
+        
+        // Função para carregar o perfil salvo
+        function loadProfile() {
+            const nome = localStorage.getItem('nome');
+            const endereco = localStorage.getItem('endereco');
+            
+            // Preencher os campos se os dados existirem no localStorage
+            if (nome) {
+                document.getElementById('nome').value = nome;
+            }
+            if (endereco) {
+                document.getElementById('endereco').value = endereco;
+            }
+        }
+        
+        // Carregar o perfil automaticamente ao abrir a página
+        window.onload = loadProfile;
+    </script>
+             <header id="cabecalho"><!---topo de destaque do site</!--->
+                 <h1>DEPOSITO ALTAS HORAS</h1>
+                 <h4>preencha o campo abaixo para comprar os produtos</h4>
+        <label for="nome"></label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        
+        <label for="endereco"></label>
+        <input type="text" id="endereco" placeholder="Digite seu endereço">
+        
+        <button onclick="saveProfile()">fazer login</button>
+                  
+                <div class="circulo"></div>
+                 <figure class="imagem-figura">
+                    <img src="interface/perfil-img.png" >
+                 </figure>
+                         
+                   <div class="box1"></div>
+                   <div class="box2"></div>
+                   <div class="box3"></div>
+                   <div class="box4"></div>
+             </header>
+             
+             <!-- Os produtos serão gerados aqui pelo JavaScript -->
+       
+             
+             
+             <footer><!---parte de baixo do site</!--->
+                
+                 <div class="triangulo-rodape1"></div>
+                    <figure class="imagem-icon2">
+                        <a href="pag2.html" target="_self"> <img src="interface/icon2.png" alt="Descrição da Imagem"> </img> <a>
+ </figure>
+                 <div class="triangulo-rodape2"></div>
+                
+                 <figure class="imagem-icon3">
+    <a href="index.html" target="_self"> <img src="interface/icon3.png" alt="Descrição da Imagem"> </img> </a>
+ </figure>
+                 <div class="triangulo-rodape3"></div>
+                 <figure class="imagem-icon1">
+    <a href="pag3.html" target="_self"> <img src="interface/icon1.png" alt="Descrição da Imagem"> </img> </a>
+ </figure>
+             </footer>
+ 
+ 
+             
+ <script src="script.js"></script>
+ 
+        
+ </body>
+ </html>
